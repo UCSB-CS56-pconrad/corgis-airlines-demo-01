@@ -6,3 +6,6 @@ you are limited on your disk quota on an academic time sharing system.
 
 Trying Airlines database from
 https://think.cs.vt.edu/corgis/java/airlines/airlines.html
+
+Javadoc for Corgis library code: https://think.cs.vt.edu/corgis/java/airlines/docs/index.html
+
