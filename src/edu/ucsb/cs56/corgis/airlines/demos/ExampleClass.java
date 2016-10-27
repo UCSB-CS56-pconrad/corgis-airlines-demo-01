@@ -10,5 +10,7 @@ public class ExampleClass {
         AirlinesLibrary airlinesLibrary = new AirlinesLibrary();
         // Access data inside the library
         ArrayList<Airline> list_of_airline = airlinesLibrary.getReports(false);
+        
+        System.out.println(list_of_airline);
     }
 }
