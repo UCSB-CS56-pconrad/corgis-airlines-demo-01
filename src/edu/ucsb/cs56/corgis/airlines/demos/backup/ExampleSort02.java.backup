@@ -1,16 +1,25 @@
 package edu.ucsb.cs56.corgis.airlines.demos;
 
+
 import java.util.ArrayList;
 import corgis.airlines.AirlinesLibrary;
 import corgis.airlines.domain.Airline;
+import java.util.Collections;
 
-public class ExampleClass {
+public class ExampleSort02 {
     public static void main(String[] args) {
         // Get access to the library
         AirlinesLibrary airlinesLibrary = new AirlinesLibrary();
         // Access data inside the library
         ArrayList<Airline> list_of_airline = airlinesLibrary.getReports(true);
-        
-        AirlinePrinter.printNicely(list_of_airline);
+
+	ArrayList<ComparableAirline> calist = new ArrayList<ComparableAirline>();
+
+	for (Airline a: list_of_airline) {
+	    calist.add(new ComparableAirline(a));
+	}
+	Collections.sort(calist);
+	
+        System.out.println(calist);
     }
 }

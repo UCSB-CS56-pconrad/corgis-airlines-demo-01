@@ -1,0 +1,24 @@
+
+import corgis.airlines.domain.*;
+
+public class ComparableAirline extends Airline implements Comparable<ComparableAirline> {
+
+    
+    public ComparableAirline(Airline airline) {
+	this.airline = airline;
+    }
+    
+    private Airline airline;
+
+    public Airport getAirport() { return airline.getAirport(); }
+    public Carrier getCarrier() { return airline.getCarrier(); }
+    public Statistics getStatistics() { return airline.getStatistics(); }
+    public Time getTime() { return airline.getTime(); }
+    public String toString() { return airline.toString(); }
+    public boolean equals(Object o) { return airline.equals(o); }
+    public int hashCode() { return airline.hashCode(); }
+    
+    public int compareTo() { return 0; } // STUB 
+
+
+}
