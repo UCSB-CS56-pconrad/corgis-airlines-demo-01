@@ -1,5 +1,9 @@
 <project>
 
+
+  <property name="main-class"
+	    value="edu.ucsb.cs56.corgis.airlines.demos.ExampleClass" />
+  
   
   <path id="project.class.path"> 
     <pathelement location="build"/>
@@ -27,21 +31,19 @@
 
   
   <target name="run" description="run the main" depends="compile">
-    <java classname="edu.ucsb.cs56.corgis.airlines.demos.ExampleClass">
+    <java classname="${main-class}">
         <classpath refid="project.class.path" />
     </java>
   </target>
 
-  <target name="runPlainArrayDemo" description="run the main from PlainArrayDemo" depends="compile">
-    <java classname="edu.ucsb.cs56.pconrad.rational.PlainArrayDemo" classpath="build"/>
-  </target>
 
 
   <target name="jar" depends="compile" description="create a jar file">
-    <jar destfile="build/rational.jar">
+    <jar destfile="build/corgiAirlines.jar">
       <fileset dir="build" includes="**/*.class"/>
+      <zipgroupfileset dir="lib" includes="**/*.jar"/>
       <manifest>
-	<attribute name="Main-Class" value="edu.ucsb.cs56.pconrad.rational.Rational"/>
+	<attribute name="Main-Class" value="${main-class}"/>
       </manifest>
     </jar>
   </target>
